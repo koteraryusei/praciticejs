@@ -4,8 +4,9 @@
  */
  const main = () => {
 
-    const N1 = lines[0]
-    const N2 = lines[1]
+    const Nn = lines[0].split(' ')
+    const N1 = Nn[0]
+    const N2 = Nn[1]
     N1N2 = N1 + N2 
 
     // 空行
