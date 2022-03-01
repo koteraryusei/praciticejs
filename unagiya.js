@@ -10,7 +10,7 @@ const main = () => {
     const seatArray = new Array(numberOfSeats).fill(1)
     let count = 0
 
-    for (i = 1; i < (numberOfGroups + 2); i++) {
+    for (i = 1; i < numberOfGroups; i++) {
         const tempLine = lines[i].split(' ')
         console.log(tempLine)
         let numberOfTeammates = Number(tempLine[0])
@@ -18,11 +18,11 @@ const main = () => {
         let tempCount = 0
         for (j = seatTag; j < (seatTag + numberOfTeammates); j++) {
             let seatTagFinal = j % numberOfSeats
-            console.log(seatTagFinal)
-            if (seatArray[seatTagFinal] == 1) {
+            console.log(tempCount)
+            if (seatArray[seatTagFinal-1] == 1) {
                 tempCount += 1
             }
-            if (tempCount == numberOfTeammates) {
+            if (tempCount == numberOfTeammates-1) {
                 seatArray.fill(2, seatTag-1, seatTagFinal-1)
                 count += numberOfTeammates
             }
@@ -32,8 +32,6 @@ const main = () => {
     console.log(count)
 
 }
-
-console.log("start")
 /**
  * 標準入出力のための処理
  */
