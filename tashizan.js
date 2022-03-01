@@ -5,8 +5,8 @@
  const main = () => {
 
     const Nn = lines[0].split(' ')
-    const N1 = Nn[0]
-    const N2 = Nn[1]
+    const N1 = Number(Nn[0])
+    const N2 = Number(Nn[1])
     N1N2 = N1 + N2 
 
     // 空行
