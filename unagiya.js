@@ -16,7 +16,10 @@ const main = () => {
         let seatTag = Number(tempLine[1])
         let tempCount = 0
         for (j = seatTag; j < (seatTag + numberOfTeammates); j++) {
-            let seatTagFinal = j % numberOfSeats
+            let seatTagFinal = j
+            if( j > numberOfSeats ){
+                seatTagFinal = j % numberOfSeats   
+            }
             if (seatArray[seatTagFinal-1] == 1) {
                 tempCount += 1
             }
