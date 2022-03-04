@@ -10,7 +10,7 @@ const main = () => {
     const seatArray = new Array(numberOfSeats).fill(1)
     let count = 0
 
-    for (i = 1; i < numberOfGroups; i++) {
+    for (i = 1; i < numberOfGroups+1; i++) {
         const tempLine = lines[i].split(' ')
         let numberOfTeammates = Number(tempLine[0])
         let seatTag = Number(tempLine[1])
@@ -24,7 +24,7 @@ const main = () => {
                 tempCount += 1
             }
             if (tempCount == numberOfTeammates) {
-                seatArray.fill(2, seatTag-1, seatTagFinal-1)
+                seatArray.fill(2, seatTag-1, seatTag+numberOfTeammates-1)
                 count += numberOfTeammates
             }
         }
